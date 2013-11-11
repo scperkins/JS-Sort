@@ -1,22 +1,19 @@
 html, body {
 	margin: 10px auto;
-	width: 700px;
+	width: 500px;
 	font-family: Helvetica, sans-serif;
+	background-color: #333;
 }
 
 table, tr {
 	border: 1px solid;
-
+	border-radius: .5em;
+	background-color: white;	
 }
 
 td {
 	border-bottom: 1px solid;
 }
-/*#nums {
-	border-bottom: 1px solid; 
-}
-*/
-
 
 #unsorted {
 	float: left;

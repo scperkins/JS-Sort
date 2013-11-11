@@ -1,0 +1,31 @@
+html, body {
+	margin: 10px auto;
+	width: 500px;
+	font-family: Helvetica, sans-serif;
+}
+
+table, tr {
+	border: 1px solid;
+
+}
+
+td {
+
+}
+#nums {
+	border-bottom: 1px solid; 
+}
+
+/*
+#unsorted {
+	margin-left: 25px;
+
+}
+
+#numbers2 {
+	width: 50px;
+}
+
+#sorted {
+	margin-left: 25px;
+}*/

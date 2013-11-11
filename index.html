@@ -2,13 +2,16 @@
 <html>
 <head>
 	<title>Javascript Sorting Algorithms</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
 
 </head>
 <body>
-	<script type="text/javascript" src="bubbleSort.js"></script>
-	<div id='numbers'>
-		<p id='unsorted'></p>
-	</div>
+	<table>
+		<thead><tr><th>Unsorted</th></tr></thead>
+		<tbody id='nums'></tbody>
+
+	</table>
+	
 
 	<div id='numbers2'>
 		<p id='sorted'></p>
@@ -16,13 +19,24 @@
 	</div>
 
 	<script type="text/javascript">
-		var nums = [];
+	
+	var nums = [];
+
+	var table = document.getElementById('nums');
+	table.innerHTML = '';
+
 	for (var x=0; x<100; x++) {
 	    rand = Math.floor((Math.random()*100)+1);
 	    nums.push(rand);
-	}
-	document.write(nums);
+	    var row = document.createElement('tr');
+	    var numbers = document.createElement('td');
+	    
+	    numbers.appendChild(document.createTextNode(nums[x]));
+	    row.appendChild(numbers);
+	    table.appendChild(row);
 
+
+	}
 
 	function bubbleSort(nums) {
 		var isSorted, temp;
@@ -40,8 +54,10 @@
 		while(isSorted);
 	} 
 
+	
 	bubbleSort(nums);
-	document.write(nums);
+	
+	
 	</script>
 
 

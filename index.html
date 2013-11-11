@@ -7,6 +7,8 @@
 </head>
 <body>
 
+	<button type='button' onclick='generateRandNums()'>Generate Random Numbers</button>
+
 	<div>
 	<table>
 		<thead><tr><th>Unsorted</th></tr></thead>
@@ -30,24 +32,27 @@
 
 	<script type="text/javascript">
 	
-	
-
 	var nums = [];
+	function generateRandNums(){
 
-	var table = document.getElementById('nums');
-	table.innerHTML = '';
+		
 
-	for (var x=0; x<100; x++) {
-	    rand = Math.floor((Math.random()*100)+1);
-	    nums.push(rand);
-	    var row = document.createElement('tr');
-	    var numbers = document.createElement('td');
-	    
-	    numbers.appendChild(document.createTextNode(nums[x]));
-	    row.appendChild(numbers);
-	    table.appendChild(row);
+		var table = document.getElementById('nums');
+		table.innerHTML = '';
+
+		for (var x=0; x<100; x++) {
+		    rand = Math.floor((Math.random()*100)+1);
+		    nums.push(rand);
+		    var row = document.createElement('tr');
+		    var numbers = document.createElement('td');
+		    
+		    numbers.appendChild(document.createTextNode(nums[x]));
+		    row.appendChild(numbers);
+		    table.appendChild(row);
 
 
+		}
+		return nums;
 	}
 
 	function bubbleSort(nums) {

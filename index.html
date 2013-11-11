@@ -7,36 +7,28 @@
 </head>
 <body>
 
-	<button type='button' onclick='generateRandNums()'>Generate Random Numbers</button>
+	<div id='unsorted'>
+		<button type='button' onclick='generateRandNums()'>Generate Random Numbers</button>
+		<table>
+			<thead><tr><th>Unsorted</th></tr></thead>
+			<tbody id='nums'></tbody>
 
-	<div>
-	<table>
-		<thead><tr><th>Unsorted</th></tr></thead>
-		<tbody id='nums'></tbody>
-
-	</table>
+		</table>
 	</div>
 
-	<div>
+	<div id='sorted'>
 		<button type='button' onclick='show_bubbleSort()' >Sort it!</button>
+		<table>
+			<thead><tr><th>Sorted</th></tr></thead>
+				<tbody id='sortedNums'></tbody>
 
-	</div>
-
-	<div>
-	<table>
-		<thead><tr><th>Sorted</th></tr></thead>
-			<tbody id='sortedNums'></tbody>
-
-	</table>
+		</table>
 	</div>
 
 	<script type="text/javascript">
 	
 	var nums = [];
 	function generateRandNums(){
-
-		
-
 		var table = document.getElementById('nums');
 		table.innerHTML = '';
 
@@ -49,8 +41,6 @@
 		    numbers.appendChild(document.createTextNode(nums[x]));
 		    row.appendChild(numbers);
 		    table.appendChild(row);
-
-
 		}
 		return nums;
 	}

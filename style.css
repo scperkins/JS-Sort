@@ -10,11 +10,12 @@ table, tr {
 }
 
 td {
-
+	border-bottom: 1px solid;
 }
-#nums {
+/*#nums {
 	border-bottom: 1px solid; 
 }
+*/
 
 /*
 #unsorted {

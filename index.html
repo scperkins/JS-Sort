@@ -6,20 +6,32 @@
 
 </head>
 <body>
+
+	<div>
 	<table>
 		<thead><tr><th>Unsorted</th></tr></thead>
 		<tbody id='nums'></tbody>
 
 	</table>
-	
+	</div>
 
-	<div id='numbers2'>
-		<p id='sorted'></p>
+	<div>
+		<button type='button' onclick='show_bubbleSort()' >Sort it!</button>
 
+	</div>
+
+	<div>
+	<table>
+		<thead><tr><th>Sorted</th></tr></thead>
+			<tbody id='sortedNums'></tbody>
+
+	</table>
 	</div>
 
 	<script type="text/javascript">
 	
+	
+
 	var nums = [];
 
 	var table = document.getElementById('nums');
@@ -52,10 +64,27 @@
 			}
 		}
 		while(isSorted);
+		return nums;
 	} 
 
+
+	function show_bubbleSort() {
+		var sortedNums = [];
+		var sortedNums = bubbleSort(nums); 
+
+		for (var i=0; i <sortedNums.length; i++) {
+			var table2 = document.getElementById('sortedNums')
+			var row2 = document.createElement('tr')
+			var numbers2 = document.createElement('td');
+
+			numbers2.appendChild(document.createTextNode(sortedNums[i]));
+			row2.appendChild(numbers2);
+			table2.appendChild(row2);
+
+		}
+	}
+
 	
-	bubbleSort(nums);
 	
 	
 	</script>

@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<head>
+	<title>Javascript Sorting Algorithms</title>
+
+</head>
+<body>
+	<script type="text/javascript" src="bubbleSort.js"></script>
+	<div id='numbers'>
+		<p id='unsorted'></p>
+	</div>
+
+	<div id='numbers2'>
+		<p id='sorted'></p>
+
+	</div>
+
+	<script type="text/javascript">
+		var nums = [];
+	for (var x=0; x<100; x++) {
+	    rand = Math.floor((Math.random()*100)+1);
+	    nums.push(rand);
+	}
+	document.write(nums);
+
+
+	function bubbleSort(nums) {
+		var isSorted, temp;
+		do {
+			isSorted = false;
+			for (var i=0; i < nums.length-1; i++) {
+				if (nums[i] > nums[i+1]) {
+					temp = nums[i];
+					nums[i] = nums[i+1];
+					nums[i+1] = temp;
+					isSorted = true;
+				}
+			}
+		}
+		while(isSorted);
+	} 
+
+	bubbleSort(nums);
+	document.write(nums);
+	</script>
+
+
+</body>
+</html>

@@ -1,3 +1,4 @@
+
 var nums = [];
 for (var x=0; x<100; x++) {
     rand = Math.floor((Math.random()*100)+1);

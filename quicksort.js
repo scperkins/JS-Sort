@@ -1,28 +1,28 @@
 
-function swap(items, firstIndex, secondIndex) {
-	var temp = items[firstIndex];
-	items[firstIndex] = items[secondIndex];
-	items[secondIndex]= temp; 
+function swap(nums, firstIndex, secondIndex) {
+	var temp = nums[firstIndex];
+	nums[firstIndex] = nums[secondIndex];
+	nums[secondIndex]= temp; 
 }
 
-function partition(items, left, right) {
+function partition(nums, left, right) {
 
-	var pivot = items[Math.floor((right+left)/2)], 
+	var pivot = nums[Math.floor((right+left)/2)], 
 	i = left,
 	j = right;
 
 	while (i<j) {
 
-		while (items[i] < pivot) {
+		while (nums[i] < pivot) {
 			i++;
 		}
 
-		while (items[j] > pivot){
+		while (nums[j] > pivot){
 			j--;
 		}
 
 		if (i <= j){
-			swap(items, i, j);
+			swap(nums, i, j);
 
 			//change indexes to continue loop
 			i++;
@@ -33,27 +33,43 @@ function partition(items, left, right) {
 	return i;
 }
 
-function quicksort(items, left, right) {
+function quicksort(nums, left, right) {
 	var index;
 
-	if (items.length > 1) {
+	if (nums.length > 1) {
 		left = typeof left != "number" ? 0 : left;
-        right = typeof right != "number" ? items.length - 1 : right;
+        right = typeof right != "number" ? nums.length - 1 : right;
 
         // split up the entire array
-        index = partition(items, left, right);
+        index = partition(nums, left, right);
 
 	    // if the returned index
 	    if (left < index - 1) {
-	        quickSort(items, left, index - 1);
+	        quicksort(nums, left, index - 1);
 	    }
 
 	    if (index < right) {
-	        quickSort(items, index, right);
+	        quicksort(nums, index, right);
 	    }
 
 	}
 
-    return items;
+    return nums;
 
+}
+
+function show_quicksort() {
+		var sortedNums = [];
+		var sortedNums = quicksort(nums); 
+
+		for (var i=0; i <sortedNums.length; i++) {
+			var table2 = document.getElementById('sortedNums')
+			var row2 = document.createElement('tr')
+			var numbers2 = document.createElement('td');
+
+			numbers2.appendChild(document.createTextNode(sortedNums[i]));
+			row2.appendChild(numbers2);
+			table2.appendChild(row2);
+
+		}
 }
